@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="svg2" viewBox="0 0 500 670" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Source: openclipart.org/detail/209545</desc>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-0">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 377.832157, -13.734101)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+  </defs>
+  <path d="M 249.521 220.291 L 279.132 305.478 L 369.301 307.315 L 297.433 361.801 L 323.549 448.124 L 249.521 396.611 L 175.493 448.124 L 201.609 361.801 L 129.741 307.315 L 219.91 305.478 Z" bx:shape="star 249.521 346.234 125.944 125.943 0.4 5 1@ffd67a02" style="stroke: rgb(0, 0, 0); stroke-width: 1px; fill: url(&quot;#gradient-0&quot;);"/>
+  <path d="M 627.353 206.557 L 656.964 291.744 L 747.133 293.581 L 675.265 348.067 L 701.381 434.39 L 627.353 382.877 L 553.325 434.39 L 579.441 348.067 L 507.573 293.581 L 597.742 291.744 Z" bx:shape="star 627.353 332.5 125.944 125.943 0.4 5 1@5570f045" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: url(&quot;#gradient-1&quot;);"/>
+</svg>
