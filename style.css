@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    width: 100vw - 5px;
+    width: calc(100vw - 50px);
     margin: 0 auto;
     padding: 0 20px 20px 20px;
     border: 5px solid white;
@@ -27,18 +27,84 @@ li {
     letter-spacing: 1px;
 }
 
-li {
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.done {
-    color: darkseagreen;
-    text-decoration: line-through;
+article {
+    width: 30%;
+    margin: 0 auto;
 }
 
 img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+button.left {
+    left: 115%;
+}
+
+button.right {
+    left: -15%;
+}
+
+button svg {
+    width: 8vw;
+    height: auto;
+}
+
+.book-cover {
+    position: relative;
+}
+
+.book-carousel {
+    display: flex;
+    align-items: center;
+    gap: 3.3%;
+    width: 100%;
+}
+
+.unselected-book {
+    opacity: 0.6;
+    transform: scale(0.8);
+}
+
+.book-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10%;
+}
+
+.basic-info {
+    flex-shrink: 0;
+    width: 45%;
+}
+
+.basic-info .title {
+    font-size: 0.875rem;
+}
+
+.basic-info .author {
+    font-size: 0.75rem;
+}
+
+.star-row {
+    display: flex;
+    width: 45%;
+    gap: 5%;
+}
+
+.star-row img {
+    flex: 1;
+    max-width: 15%;
+    height: auto;
 }

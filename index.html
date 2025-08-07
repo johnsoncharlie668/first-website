@@ -5,6 +5,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <meta charset="utf-8" />
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <meta name="viewport" content="width=device-width" />
     <title>Charlie's Reading Recommendations</title>
 </head>
@@ -38,14 +40,75 @@
         It is what stays with the reader after they have turned the last page.
     </p>
 
-    <article>
-        <img src="images/book-covers/the-stranger-cover.jpg" alt="The Stranger book cover: A series of black spikes radially point to the novel's title on a white background" />
-        <h4>The Stranger</h4>
-        <p>Albert Camus</p>
-        <div class="star-row"></div>
-    </article>
+    <div class="book-carousel">
+        <article class="unselected-book">
+            <div class='book-cover'>
+                <img src="images/book-covers/frankenstein-cover.jpg" alt='Frankenstein book cover: Features "The Wanderer Above the Sea Fog" by Caspar David Friedrich - a German romantic painting' />
+                <button class="left">
+                    <i data-lucide="circle-arrow-left"></i>
+                </button>
+            </div>
+            <div class ='book-info'>
+                <div class='basic-info'>
+                    <h4 class="title">Frankenstein</h4>
+                    <p class="author">Mary Shelley</p>
+                </div>
 
-    <script src="script.js"></script>
+                <div class="star-row">
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                </div>
+            </div>
+        </article>
+        <article class="current-book">
+            <div class='book-cover'>
+                <img src="images/book-covers/the-stranger-cover.jpg" alt="The Stranger book cover: A series of black spikes radially point to the novel's title on a white background" />
+            </div>
+            <div class ='book-info'>
+                <div class='basic-info'>
+                    <h4 class="title">The Stranger</h4>
+                    <p class="author">Albert Camus</p>
+                </div>
+
+                <div class="star-row">
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                </div>
+            </div>
+        </article>
+        <article class="unselected-book">
+            <div class='book-cover'>
+                <img src="images/book-covers/the-metamorphosis-cover.jpg" alt="The Metamorphosis book cover: A man turned bug monster lying on his bed" />
+                <button class="right">
+                    <i data-lucide="circle-arrow-right"></i>
+                </button>
+            </div>
+            <div class ='book-info'>
+                <div class='basic-info'>
+                    <h4 class="title">The Metamorphosis</h4>
+                    <p class="author">Franz Kafka</p>
+                </div>
+
+                <div class="star-row">
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/full-star.svg" alt="A full star" />
+                    <img src="images/stars/half-star.svg" alt="A full star" />
+                </div>
+            </div>
+        </article>
+    </div>
+    
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 
 </html>

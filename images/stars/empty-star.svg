@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg id="svg2" viewBox="0 0 500 670" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" id="svg2" viewBox="139.1199951171875 168.07400512695312 239.55999755859375 227.8330078125">
   <desc>Source: openclipart.org/detail/209545</desc>
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 377.832157, -13.734101)">
@@ -27,10 +26,10 @@
       <rect x="-242.9" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="282.887"/>
     </clipPath>
   </defs>
-  <path d="M 627.353 206.557 L 656.964 291.744 L 747.133 293.581 L 675.265 348.067 L 701.381 434.39 L 627.353 382.877 L 553.325 434.39 L 579.441 348.067 L 507.573 293.581 L 597.742 291.744 Z" bx:shape="star 627.353 332.5 125.944 125.943 0.4 5 1@5570f045" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: url(&quot;#gradient-1&quot;);"/>
-  <path d="M 41.065 699.84 L 70.676 785.027 L 160.845 786.864 L 88.977 841.35 L 115.093 927.673 L 41.065 876.16 L -32.963 927.673 L -6.847 841.35 L -78.715 786.864 L 11.454 785.027 Z" bx:shape="star 41.065 825.783 125.944 125.943 0.4 5 1@3902ff73" style="stroke: rgb(0, 0, 0); stroke-width: 1px; clip-path: url(&quot;#clip-0&quot;); fill: rgb(229, 229, 229);"/>
-  <path d="M -127.31 227.865 L -97.699 313.052 L -7.53 314.889 L -79.398 369.375 L -53.282 455.698 L -127.31 404.185 L -201.338 455.698 L -175.222 369.375 L -247.09 314.889 L -156.921 313.052 Z" bx:shape="star -127.31 353.808 125.944 125.943 0.4 5 1@f964fb83" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: url(&quot;#gradient-2&quot;); clip-path: url(&quot;#clip-1&quot;);"/>
-  <path d="M 110.797 -0.485 L 140.408 84.702 L 230.577 86.539 L 158.709 141.025 L 184.825 227.348 L 110.797 175.835 L 36.769 227.348 L 62.885 141.025 L -8.983 86.539 L 81.186 84.702 Z" bx:shape="star 110.797 125.458 125.944 125.943 0.4 5 1@977de017" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: url(&quot;#gradient-3&quot;); clip-path: url(&quot;#clip-2&quot;);" transform="matrix(-1, 0, 0, 1, 0, 0)"/>
-  <path d="M -242.92 282.887 L -213.309 368.074 L -123.14 369.911 L -195.008 424.397 L -168.892 510.72 L -242.92 459.207 L -316.948 510.72 L -290.832 424.397 L -362.7 369.911 L -272.531 368.074 Z" bx:shape="star -242.92 408.83 125.944 125.943 0.4 5 1@09d9a3a0" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: rgb(229, 229, 229); clip-path: url(&quot;#clip-3&quot;);"/>
+  
+  
+  
+  
+  
   <path d="M 258.9 168.074 L 288.511 253.261 L 378.68 255.098 L 306.812 309.584 L 332.928 395.907 L 258.9 344.394 L 184.872 395.907 L 210.988 309.584 L 139.12 255.098 L 229.289 253.261 Z" bx:shape="star 258.9 294.017 125.944 125.943 0.4 5 1@1fc1efb6" style="stroke: rgb(0, 0, 0); stroke-width: 0.757; fill: rgb(227, 227, 227);"/>
 </svg>
