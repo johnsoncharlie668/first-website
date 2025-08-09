@@ -14,7 +14,7 @@ const books = [
         coverImage: 'images/book-covers/the-stranger-cover.jpg',
         coverImageDescription: "The Stranger book cover: A series of black spikes radially point to the novel's title on a white background",
         style: 5,
-        story: 4,
+        story: 4.5,
         soul: 5,
     },
     {
@@ -24,8 +24,53 @@ const books = [
         coverImageDescription: "The Metamorphosis book cover: A man turned bug monster lying on his bed",
         style: 5,
         story: 4,
-        soul: 4.5,
+        soul: 5,
     },
+    {
+        title: 'The Bluest Eye',
+        author: 'Toni Morrison',
+        coverImage: 'images/book-covers/the-bluest-eye-cover.jpg',
+        coverImageDescription: 'The Bluest Eye book cover: Pecola sits by a window with a sorrowful expression',
+        style: 4,
+        story: 4,
+        soul: 4,
+    },
+    {
+        title: 'The Glass Castle',
+        author: 'Jeannette Walls',
+        coverImage:'images/book-covers/the-glass-castle-cover.jpg',
+        coverImageDescription: 'The Glass Castle book cover: A young girl whispers',
+        style: 4,
+        story: 4.5,
+        soul: 3.5,
+    },
+    {
+        title: 'No Country for Old Men',
+        author: 'Cormac McCarthy',
+        coverImage: 'images/book-covers/no-country-for-old-men-cover.jpg',
+        coverImageDescription: 'No Country for Old Men book cover: A vast field with a lone road sign',
+        style: 4,
+        story: 4.5,
+        soul: 3.5,
+    },
+    {
+        title: 'The Plague',
+        author: 'Albert Camus',
+        coverImage: 'images/book-covers/the-plague-cover.jpg',
+        coverImageDescription: 'The Plague book cover: A minimalist rendition of Dr. Bernard Rieux standing with blothces of pestilence',
+        style: 4,
+        story: 4,
+        soul: 4,
+    },
+    {
+        title: 'The Bean Trees',
+        author: 'Barbara Kingsolver',
+        coverImage: 'images/book-covers/the-bean-trees-cover.jpg',
+        coverImageDescription: 'The Bean Trees cover: A lone tree stands tall',
+        style: 3.5,
+        story: 3.5,
+        soul: 4.5,
+    }
 ];
 
 // Calculate overall rating for each book
@@ -159,6 +204,15 @@ function updateBookIndex(change) {
     console.log(currentBookIndex);
 }
 
+function updateStars() {
+    for (let i = 0; i < starRows.length; i++) {
+        // For each row of stars first clear the existing stars
+        starRows[i].innerHTML = '';
+        // Then repopulate that row
+        displayRating(starRows[i], books[(i + previousBookIndex + numBooks) % numBooks].rating);
+    }
+}
+
 // Need lots of info to make changes to book carousel
 const prevCover = previousBookArticle.querySelector('img');
 const prevTitle = previousBookArticle.querySelector('.title');
@@ -173,6 +227,7 @@ const nextTitle = nextBookArticle.querySelector('.title');
 const nextAuthor = nextBookArticle.querySelector('.author');
 
 function updateBookCarousel() {
+    // Update all the book info
     prevCover.src = previousBook.coverImage;
     prevCover.alt = previousBook.coverImageDescription;
     prevTitle.textContent = previousBook.title;
@@ -187,6 +242,9 @@ function updateBookCarousel() {
     nextCover.alt = nextBook.coverImageDescription;
     nextTitle.textContent = nextBook.title;
     nextAuthor.textContent = nextBook.author;
+
+    // Then update stars
+    updateStars();
 }
 
 
