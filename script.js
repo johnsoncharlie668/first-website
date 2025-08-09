@@ -45,22 +45,22 @@ let nextBook = books[nextBookIndex];
 const numBooks = books.length;
 
 // Use a function to display stars in accordance with rating
-function DisplayStar(container, imageAddress) {
-    starElement = document.createElement("IMG");
+function displayStar(container, imageAddress) {
+    const starElement = document.createElement("IMG");
     starElement.src = imageAddress;
     container.append(starElement);
 }
 
-function DisplayRating(starContainer, rating) {
-    remainingStars = rating;
+function displayRating(starContainer, rating) {
+    let remainingStars = rating;
     for (let i = 0; i < 5; i++) {
         if (remainingStars >= 1) {
-            DisplayStar(starContainer, 'images/stars/full-star.svg');
+            displayStar(starContainer, 'images/stars/full-star.svg');
         }
         else if (remainingStars === 0.5) {
-            DisplayStar(starContainer, 'images/stars/half-star.svg');
+            displayStar(starContainer, 'images/stars/half-star.svg');
         }
-        else {DisplayStar(starContainer, 'images/stars/empty-star.svg');}
+        else {displayStar(starContainer, 'images/stars/empty-star.svg');}
 
         remainingStars -= 1;
     }
@@ -117,15 +117,15 @@ let nextBookHTML = `
     </div>
 `;
 
-previousBookArticle = document.createElement('article');
+const previousBookArticle = document.createElement('article');
 previousBookArticle.className = 'unselected-book';
 previousBookArticle.innerHTML = previousBookHTML;
 
-currentBookArticle = document.createElement('article');
+const currentBookArticle = document.createElement('article');
 currentBookArticle.className = 'current-book';
 currentBookArticle.innerHTML = currentBookHTML;
 
-nextBookArticle = document.createElement('article');
+const nextBookArticle = document.createElement('article');
 nextBookArticle.className = 'unselected-book';
 nextBookArticle.innerHTML = nextBookHTML;
 
@@ -138,7 +138,7 @@ bookCarousel.append(nextBookArticle);
 // Set stars
 const starRows = document.querySelectorAll('.star-row');
 for (let i = 0; i < starRows.length; i++) {
-    DisplayRating(starRows[i], books[i].rating);
+    displayRating(starRows[i], books[i].rating);
 }
 
 // Create icons for buttons
@@ -147,7 +147,7 @@ lucide.createIcons()
 // The next section is all about updates
 
 // By using modulus, we have wrapping around functionality
-function UpdateBookIndex(change) {
+function updateBookIndex(change) {
     previousBookIndex = (previousBookIndex + change + numBooks) % numBooks;
     currentBookIndex = (currentBookIndex + change + numBooks) % numBooks;
     nextBookIndex = (nextBookIndex + change + numBooks) % numBooks;
@@ -172,7 +172,7 @@ const nextCover = nextBookArticle.querySelector('img');
 const nextTitle = nextBookArticle.querySelector('.title');
 const nextAuthor = nextBookArticle.querySelector('.author');
 
-function UpdateBookCarousel() {
+function updateBookCarousel() {
     prevCover.src = previousBook.coverImage;
     prevCover.alt = previousBook.coverImageDescription;
     prevTitle.textContent = previousBook.title;
@@ -190,9 +190,9 @@ function UpdateBookCarousel() {
 }
 
 
-function UpdateBooks(change) {
-    UpdateBookIndex(change);
-    UpdateBookCarousel();
+function updateBooks(change) {
+    updateBookIndex(change);
+    updateBookCarousel();
 }
 
 // Get buttons
@@ -200,6 +200,5 @@ const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 
 // Make buttons functional
-leftButton.onclick = () => UpdateBooks(-1);
-rightButton.onclick = () => UpdateBooks(+1);
-
+leftButton.onclick = () => updateBooks(-1);
+rightButton.onclick = () => updateBooks(+1);
