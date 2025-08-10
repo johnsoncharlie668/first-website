@@ -76,7 +76,6 @@ const books = [
 // Calculate overall rating for each book
 for (let book of books) {
     book.rating = Math.round(((book.style + book.story + book.soul) / 3) * 2) / 2;
-    console.log(`${book.title}: ${book.rating}`)
 }
 
 // Get stating info needed for book carousel
@@ -90,22 +89,20 @@ let nextBook = books[nextBookIndex];
 const numBooks = books.length;
 
 // Use a function to display stars in accordance with rating
-function displayStar(container, imageAddress) {
-    const starElement = document.createElement("IMG");
+function displayStar(starElement, imageAddress) {
     starElement.src = imageAddress;
-    container.append(starElement);
 }
 
-function displayRating(starContainer, rating) {
+function displayRating(starsInRow, rating) {
     let remainingStars = rating;
     for (let i = 0; i < 5; i++) {
         if (remainingStars >= 1) {
-            displayStar(starContainer, 'images/stars/full-star.svg');
+            displayStar(starsInRow[i], 'images/stars/full-star.svg');
         }
         else if (remainingStars === 0.5) {
-            displayStar(starContainer, 'images/stars/half-star.svg');
+            displayStar(starsInRow[i], 'images/stars/half-star.svg');
         }
-        else {displayStar(starContainer, 'images/stars/empty-star.svg');}
+        else {displayStar(starsInRow[i], 'images/stars/empty-star.svg');}
 
         remainingStars -= 1;
     }
@@ -114,65 +111,48 @@ function displayRating(starContainer, rating) {
 // Now get book carousel to make it dynamically generated
 const bookCarousel = document.querySelector(".book-carousel");
 
-let previousBookHTML = `
-    <div class='book-cover'>
-        <img src=${previousBook.coverImage} alt= ${previousBook.coverImageDescription}/>
-        <button class="left" id="left-button">
-            <i data-lucide="circle-arrow-left"></i>
-        </button>
-    </div>
-    <div class ='book-info'>
-        <div class='basic-info'>
-            <h4 class="title">${previousBook.title}</h4>
-            <p class="author">${previousBook.author}</p>
+function getBookHTML(book, position) {
+    const arrows = {
+        previous: {icon: 'circle-arrow-left', class: 'left', id: 'left-button'},
+        next: {icon: 'circle-arrow-right', class: 'right', id: 'right-button'}
+    };
+
+    return `
+        <div class='book-cover'>
+            <img src="${book.coverImage}" alt= "${book.coverImageDescription}"/>
+            ${arrows[position] ? `
+            <button class="${arrows[position].class}" id="${arrows[position].id}">
+                <i data-lucide="${arrows[position].icon}"></i>
+            </button> ` : ``}
         </div>
+        <div class ='book-info'>
+            <div class='basic-info'>
+                <h4 class="title">${book.title}</h4>
+                <p class="author">${book.author}</p>
+            </div>
 
-        <div class="star-row"></div>
-    </div>
-`;
-
-let currentBookHTML = `
-    <div class='book-cover'>
-        <img src=${currentBook.coverImage} alt=${currentBook.coverImageDescription}/>
-    </div>
-    <div class ='book-info'>
-        <div class='basic-info'>
-            <h4 class="title">${currentBook.title}</h4>
-            <p class="author">${currentBook.author}</p>
+            <div class="star-row">
+                <img>
+                <img>
+                <img>
+                <img>
+                <img>
+            </div>
         </div>
-
-        <div class="star-row"></div>
-    </div>
-`;
-
-let nextBookHTML = `
-    <div class='book-cover'>
-        <img src="${nextBook.coverImage}" alt=${nextBook.coverImageDescription} />
-        <button class="right" id="right-button">
-            <i data-lucide="circle-arrow-right"></i>
-        </button>
-    </div>
-    <div class ='book-info'>
-        <div class='basic-info'>
-            <h4 class="title">${nextBook.title}</h4>
-            <p class="author">${nextBook.author}</p>
-        </div>
-
-        <div class="star-row"></div>
-    </div>
-`;
+    `;
+}
 
 const previousBookArticle = document.createElement('article');
 previousBookArticle.className = 'unselected-book';
-previousBookArticle.innerHTML = previousBookHTML;
+previousBookArticle.innerHTML = getBookHTML(previousBook, 'previous');
 
 const currentBookArticle = document.createElement('article');
 currentBookArticle.className = 'current-book';
-currentBookArticle.innerHTML = currentBookHTML;
+currentBookArticle.innerHTML = getBookHTML(currentBook, null);
 
 const nextBookArticle = document.createElement('article');
 nextBookArticle.className = 'unselected-book';
-nextBookArticle.innerHTML = nextBookHTML;
+nextBookArticle.innerHTML = getBookHTML(nextBook, 'next');
 
 
 // Set starting html
@@ -182,8 +162,10 @@ bookCarousel.append(nextBookArticle);
 
 // Set stars
 const starRows = document.querySelectorAll('.star-row');
+const stars = [];
 for (let i = 0; i < starRows.length; i++) {
-    displayRating(starRows[i], books[i].rating);
+    stars.push(starRows[i].children);
+    displayRating(stars[i], books[i].rating);
 }
 
 // Create icons for buttons
@@ -200,16 +182,12 @@ function updateBookIndex(change) {
     previousBook = books[previousBookIndex];
     currentBook = books[currentBookIndex];
     nextBook = books[nextBookIndex];
-
-    console.log(currentBookIndex);
 }
 
 function updateStars() {
     for (let i = 0; i < starRows.length; i++) {
-        // For each row of stars first clear the existing stars
-        starRows[i].innerHTML = '';
-        // Then repopulate that row
-        displayRating(starRows[i], books[(i + previousBookIndex + numBooks) % numBooks].rating);
+        // For each row of stars simply change the src of the imgae
+        displayRating(stars[i], books[(i + previousBookIndex + numBooks) % numBooks].rating);
     }
 }
 
@@ -246,7 +224,6 @@ function updateBookCarousel() {
     // Then update stars
     updateStars();
 }
-
 
 function updateBooks(change) {
     updateBookIndex(change);
