@@ -108,6 +108,20 @@ function displayRating(starsInRow, rating) {
     }
 }
 
+// To display what number book we're on, always just display currentBookIndex unless it's 0: In that case display numBooks
+const bookIndexDisplay = document.querySelector(".book-index-display");
+
+function updateBookIndexDisplay() {
+    if (currentBookIndex != 0) {
+        bookIndexDisplay.innerHTML = `${currentBookIndex} / ${numBooks}`;
+    }
+    else {
+                bookIndexDisplay.innerHTML = `${numBooks} / ${numBooks}`;
+    }
+}
+
+updateBookIndexDisplay();
+
 // Now get book carousel to make it dynamically generated
 const bookCarousel = document.querySelector(".book-carousel");
 
@@ -228,6 +242,7 @@ function updateBookCarousel() {
 function updateBooks(change) {
     updateBookIndex(change);
     updateBookCarousel();
+    updateBookIndexDisplay();
 }
 
 // Get buttons
