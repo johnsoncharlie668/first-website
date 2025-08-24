@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" id="svg2" viewBox="139.1199951171875 168.07400512695312 239.55999755859375 227.8330078125">
+  <desc>Source: openclipart.org/detail/209545</desc>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 377.832157, -13.734101)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <clipPath id="clip-0">
+      <rect x="41.085" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 1px;" y="699.84"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-2" gradientTransform="matrix(1, 0, 0, 1, -376.828991, 7.574383)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <clipPath id="clip-1">
+      <rect x="-127.29" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="227.865"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-3" gradientTransform="matrix(1, 0, 0, 1, -138.729538, -220.775923)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <clipPath id="clip-2">
+      <rect x="110.817" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="-0.485"/>
+    </clipPath>
+    <clipPath id="clip-3">
+      <rect x="-242.9" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="282.887"/>
+    </clipPath>
+  </defs>
+  
+  
+  
+  
+  
+  <path d="M 258.9 168.074 L 288.511 253.261 L 378.68 255.098 L 306.812 309.584 L 332.928 395.907 L 258.9 344.394 L 184.872 395.907 L 210.988 309.584 L 139.12 255.098 L 229.289 253.261 Z" bx:shape="star 258.9 294.017 125.944 125.943 0.4 5 1@1fc1efb6" style="stroke: rgb(0, 0, 0); stroke-width: 0.757; fill: rgb(227, 227, 227);"/>
+</svg>

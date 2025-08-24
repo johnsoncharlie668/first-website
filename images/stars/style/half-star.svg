@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" id="svg2" viewBox="149 182 239.560 227.833">
+  <desc>Source: openclipart.org/detail/209545</desc>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 377.832157, -13.734101)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <clipPath id="clip-0">
+      <rect width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 1px;" x="119.8"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-2" gradientTransform="matrix(1, 0, 0, 1, -376.828991, 7.574383)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+    <clipPath id="clip-1">
+      <rect x="-127.29" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="227.865"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-3" gradientTransform="matrix(1, 0, 0, 1, -369.305725, -220.291183)">
+      <stop offset="0" style="stop-color: rgb(255, 96, 224)"/>
+      <stop offset="1" style="stop-color: rgb(224, 32, 176);"/>
+    </linearGradient>
+    <clipPath id="clip-2">
+      <rect x="-119.76" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;"/>
+    </clipPath>
+    <clipPath id="clip-3">
+      <rect x="-242.9" width="141.686" height="379.259" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 0.87;" y="282.887"/>
+    </clipPath>
+  </defs>
+  
+  
+  <g transform="matrix(1, 0, 0, 1, 148.841995, 181.758255)">
+    <path d="M 119.78 0 L 149.391 85.187 L 239.56 87.024 L 167.692 141.51 L 193.808 227.833 L 119.78 176.32 L 45.752 227.833 L 71.868 141.51 L 0 87.024 L 90.169 85.187 Z" bx:shape="star 119.78 125.943 125.944 125.943 0.4 5 1@8f07bcef" style="stroke: rgb(0, 0, 0); stroke-width: 1px; clip-path: url(&quot;#clip-0&quot;); fill: rgb(227, 227, 227);"/>
+    <path d="M -119.78 0 L -90.169 85.187 L 0 87.024 L -71.868 141.51 L -45.752 227.833 L -119.78 176.32 L -193.808 227.833 L -167.692 141.51 L -239.56 87.024 L -149.391 85.187 Z" bx:shape="star -119.78 125.943 125.944 125.943 0.4 5 1@a1234647" style="stroke: rgb(0, 0, 0); stroke-width: 0.87; fill: url(&quot;#gradient-3&quot;); clip-path: url(&quot;#clip-2&quot;);" transform="matrix(-1, 0, 0, 1, 0, 0)"/>
+  </g>
+  
+  
+</svg>

@@ -124,12 +124,12 @@ function displayRating(starsInRow, rating) {
     let remainingStars = rating;
     for (let i = 0; i < 5; i++) {
         if (remainingStars >= 1) {
-            displayStar(starsInRow[i], 'images/stars/full-star.svg');
+            displayStar(starsInRow[i], 'images/stars/overall/full-star.svg');
         }
         else if (remainingStars === 0.5) {
-            displayStar(starsInRow[i], 'images/stars/half-star.svg');
+            displayStar(starsInRow[i], 'images/stars/overall/half-star.svg');
         }
-        else {displayStar(starsInRow[i], 'images/stars/empty-star.svg');}
+        else {displayStar(starsInRow[i], 'images/stars/overall/empty-star.svg');}
 
         remainingStars -= 1;
     }
@@ -160,7 +160,9 @@ function getBookHTML(book, position) {
 
     return `
         <div class='book-cover'>
-            <img src="${book.coverImage}" alt= "${book.coverImageDescription}"/>
+            <a href="book-profile.html">
+                <img src="${book.coverImage}" alt= "${book.coverImageDescription}"/>
+            </a>
             ${arrows[position] ? `
             <button class="${arrows[position].class}" id="${arrows[position].id}">
                 <i data-lucide="${arrows[position].icon}"></i>

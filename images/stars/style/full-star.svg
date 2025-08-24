@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" id="svg2" viewBox="129.741 220.292 239.560 227.833">
+  <desc>Source: openclipart.org/detail/209545</desc>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-0">
+      <stop offset="0" style="stop-color: rgb(255, 96, 224)"/>
+      <stop offset="1" style="stop-color: rgb(224, 32, 176);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="249.521" y1="220.291" x2="249.521" y2="448.124" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 377.832157, -13.734101)">
+      <stop offset="0" style="stop-color: rgb(98.431% 100% 0%)"/>
+      <stop offset="1" style="stop-color: rgb(255, 217, 0);"/>
+    </linearGradient>
+  </defs>
+  <path d="M 249.521 220.291 L 279.132 305.478 L 369.301 307.315 L 297.433 361.801 L 323.549 448.124 L 249.521 396.611 L 175.493 448.124 L 201.609 361.801 L 129.741 307.315 L 219.91 305.478 Z" bx:shape="star 249.521 346.234 125.944 125.943 0.4 5 1@ffd67a02" style="stroke: rgb(0, 0, 0); stroke-width: 1px; fill: url(&quot;#gradient-0&quot;);"/>
+  
+</svg>

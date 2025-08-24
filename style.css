@@ -14,10 +14,12 @@ body {
 
 h1 {
     font-size: 4rem;
-    text-align: center;
     margin: 0;
     padding: 20px 0;
     text-shadow: -3px 3px 1px gray;
+}
+.heading {
+    text-align: center;
 }
 
 p,
@@ -65,7 +67,7 @@ button svg {
 
 .book-cover {
     position: relative;
-    aspect-ratio: 6 / 10;
+    aspect-ratio: 6.2 / 10;
     width: 100%;
     outline: 1px dashed hotpink;
 }
