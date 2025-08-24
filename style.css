@@ -18,9 +18,6 @@ h1 {
     padding: 20px 0;
     text-shadow: -3px 3px 1px gray;
 }
-.heading {
-    text-align: center;
-}
 
 p,
 li {
@@ -29,97 +26,8 @@ li {
     letter-spacing: 1px;
 }
 
-article {
-    width: 30%;
-    margin: 0 auto;
-    background: transparent;
-    outline: 1px dashed lime;
-}
-
 img {
     width: 100%;
     height: auto;
     box-sizing: border-box;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: none;
-    cursor: pointer;
-    color: white;
-    border: none;
-}
-
-button.left {
-    left: 115%;
-}
-
-button.right {
-    left: -15%;
-}
-
-button svg {
-    width: 8vw;
-    height: auto;
-}
-
-.book-cover {
-    position: relative;
-    aspect-ratio: 6.2 / 10;
-    width: 100%;
-    outline: 1px dashed hotpink;
-}
-
-.book-cover img {
-    object-fit: contain;
-    object-position: bottom center;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.book-carousel {
-    display: flex;
-    align-items: flex-start;
-    gap: 3.3%;
-    width: 100%;
-}
-
-.unselected-book {
-    opacity: 0.6;
-    transform: scale(0.8);
-}
-
-.book-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10%;
-}
-
-.basic-info {
-    flex-shrink: 0;
-    width: 45%;
-}
-
-.basic-info .title {
-    font-size: 0.875rem;
-}
-
-.basic-info .author {
-    font-size: 0.75rem;
-}
-
-.star-row {
-    display: flex;
-    width: 45%;
-    gap: 5%;
-}
-
-.star-row img {
-    flex: 1;
-    max-width: 15%;
-    height: auto;
 }

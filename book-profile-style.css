@@ -6,3 +6,35 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+
+.basic-profile-info {
+    width: 60%;
+}
+
+.star-row {
+    display: flex;
+}
+
+.overall {
+    padding: 0vh 2vw;
+    width: 40%;
+    gap: 5%;
+}
+
+.special {
+    width: 30%;
+    gap: 4%;
+}
+
+.star-row img {
+    flex: 1;
+    min-width: 0;
+}
+
+.rating-container {
+    display: flex;
+}
+
+.rating-descriptor {
+    width: 4em;
+}
