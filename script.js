@@ -1,10 +1,5 @@
 import { books } from "./book-data.js";
 
-// Calculate overall rating for each book
-for (let book of books) {
-    book.rating = Math.round(((book.style + book.story + book.soul) / 3) * 2) / 2;
-}
-
 // Get stating info needed for book carousel
 let previousBookIndex = 0;
 let currentBookIndex = 1;
@@ -60,7 +55,7 @@ function getBookHTML(book, position) {
 
     return `
         <div class='book-cover'>
-            <a href="book-profile.html">
+            <a href="${book.link}" class="link">
                 <img src="${book.coverImage}" alt= "${book.coverImageDescription}"/>
             </a>
             ${arrows[position] ? `
@@ -138,14 +133,17 @@ function updateStars() {
 const prevCover = previousBookArticle.querySelector('img');
 const prevTitle = previousBookArticle.querySelector('.title');
 const prevAuthor = previousBookArticle.querySelector('.author');
+const prevLink = previousBookArticle.querySelector('.link');
 
 const currentCover = currentBookArticle.querySelector('img');
 const currentTitle = currentBookArticle.querySelector('.title');
 const currentAuthor = currentBookArticle.querySelector('.author');
+const currentLink = currentBookArticle.querySelector('.link');
 
 const nextCover = nextBookArticle.querySelector('img');
 const nextTitle = nextBookArticle.querySelector('.title');
 const nextAuthor = nextBookArticle.querySelector('.author');
+const nextLink = nextBookArticle.querySelector('.link');
 
 function updateBookCarousel() {
     // Update all the book info
@@ -153,16 +151,19 @@ function updateBookCarousel() {
     prevCover.alt = previousBook.coverImageDescription;
     prevTitle.textContent = previousBook.title;
     prevAuthor.textContent = previousBook.author;
+    prevLink.href = previousBook.link;
 
     currentCover.src = currentBook.coverImage;
     currentCover.alt = currentBook.coverImageDescription;
     currentTitle.textContent = currentBook.title;
     currentAuthor.textContent = currentBook.author;
+    currentLink.href = currentBook.link;
 
     nextCover.src = nextBook.coverImage;
     nextCover.alt = nextBook.coverImageDescription;
     nextTitle.textContent = nextBook.title;
     nextAuthor.textContent = nextBook.author;
+    nextLink.href = nextBook.link;
 
     // Then update stars
     updateStars();
@@ -189,8 +190,8 @@ function getProfileHTML(book) {
             <div class="left">
                 <div class="general-info">
                     <div class="basic-profile-info">
-                        <h1>The Stranger</h1>
-                        <h2>Albert Camus</h2>
+                        <h1>${book.title}</h1>
+                        <h2>${book.author}</h2>
                     </div>
                     <div class="overall star-row">
                         <img src="images/stars/overall/full-star.svg">

@@ -4,6 +4,7 @@ export const books = [
         author: 'Mary Shelley',
         coverImage: 'images/book-covers/frankenstein-cover.jpg',
         coverImageDescription: 'Frankenstein book cover: Features "The Wanderer Above the Sea Fog" by Caspar David Friedrich - a German romantic painting',
+        link: 'book-profile.html?title=frankenstein',
         style: 4.5,
         story: 5,
         soul: 5,
@@ -15,6 +16,7 @@ export const books = [
         author: 'Albert Camus',
         coverImage: 'images/book-covers/the-stranger-cover.jpg',
         coverImageDescription: "The Stranger book cover: A series of black spikes radially point to the novel's title on a white background",
+        link: 'book-profile.html?title=the-stranger',
         style: 5,
         story: 4.5,
         soul: 5,
@@ -26,6 +28,7 @@ export const books = [
         author: 'Franz Kafka',
         coverImage: 'images/book-covers/the-metamorphosis-cover.jpg',
         coverImageDescription: "The Metamorphosis book cover: A man turned bug monster lying on his bed",
+        link: 'book-profile.html?title=the-metamorphosis',
         style: 5,
         story: 4,
         soul: 5,
@@ -37,6 +40,7 @@ export const books = [
         author: 'Toni Morrison',
         coverImage: 'images/book-covers/the-bluest-eye-cover.jpg',
         coverImageDescription: 'The Bluest Eye book cover: Pecola sits by a window with a sorrowful expression',
+        link: 'book-profile.html?title=the-bluest-eye',
         style: 4,
         story: 4,
         soul: 4,
@@ -48,6 +52,7 @@ export const books = [
         author: 'Jeannette Walls',
         coverImage:'images/book-covers/the-glass-castle-cover.jpg',
         coverImageDescription: 'The Glass Castle book cover: A young girl whispers',
+        link: 'book-profile.html?title=the-glass-castle',
         style: 3.5,
         story: 4,
         soul: 3.5,
@@ -59,6 +64,7 @@ export const books = [
         author: 'Cormac McCarthy',
         coverImage: 'images/book-covers/no-country-for-old-men-cover.jpg',
         coverImageDescription: 'No Country for Old Men book cover: A vast field with a lone road sign',
+        link: 'book-profile.html?title=no-country-for-old-men',
         style: 3.5,
         story: 4.5,
         soul: 3,
@@ -70,6 +76,7 @@ export const books = [
         author: 'Albert Camus',
         coverImage: 'images/book-covers/the-plague-cover.jpg',
         coverImageDescription: 'The Plague book cover: A minimalist rendition of Dr. Bernard Rieux standing with blothces of pestilence',
+        link: 'book-profile.html?title=the-plague',
         style: 4,
         story: 3.5,
         soul: 4,
@@ -81,6 +88,7 @@ export const books = [
         author: 'Barbara Kingsolver',
         coverImage: 'images/book-covers/the-bean-trees-cover.jpg',
         coverImageDescription: 'The Bean Trees cover: A lone tree stands tall',
+        link: 'book-profile.html?title=the-bean-trees',
         style: 3.5,
         story: 3.5,
         soul: 3.5,
@@ -92,6 +100,7 @@ export const books = [
         author: 'Franz Kafka',
         coverImage: 'images/book-covers/the-trial-cover.jpg',
         coverImageDescription: '',
+        link: 'book-profile.html?title=the-trial',
         style: 4.5,
         story: 4,
         soul: 5,
@@ -99,3 +108,8 @@ export const books = [
         subgenres: ['absurdist'],
     },
 ];
+
+// Calculate overall rating for each book
+for (let book of books) {
+    book.rating = Math.round(((book.style + book.story + book.soul) / 3) * 2) / 2;
+}
