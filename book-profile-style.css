@@ -38,3 +38,12 @@
 .rating-descriptor {
     width: 4em;
 }
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+img.cover {
+    transform: translate(20px, 10px);
+}

@@ -1,104 +1,4 @@
-const books = [
-    {
-        title: 'Frankenstein',
-        author: 'Mary Shelley',
-        coverImage: 'images/book-covers/frankenstein-cover.jpg',
-        coverImageDescription: 'Frankenstein book cover: Features "The Wanderer Above the Sea Fog" by Caspar David Friedrich - a German romantic painting',
-        style: 4.5,
-        story: 5,
-        soul: 5,
-        genre: 'fiction',
-        subgenres: ['science fiction', 'gothic fiction'],
-    },
-    {
-        title: 'The Stranger',
-        author: 'Albert Camus',
-        coverImage: 'images/book-covers/the-stranger-cover.jpg',
-        coverImageDescription: "The Stranger book cover: A series of black spikes radially point to the novel's title on a white background",
-        style: 5,
-        story: 4.5,
-        soul: 5,
-        genre: 'fiction',
-        subgenres: ['absurdist'],
-    },
-    {
-        title: 'The Metamorphosis',
-        author: 'Franz Kafka',
-        coverImage: 'images/book-covers/the-metamorphosis-cover.jpg',
-        coverImageDescription: "The Metamorphosis book cover: A man turned bug monster lying on his bed",
-        style: 5,
-        story: 4,
-        soul: 5,
-        genre: 'fiction',
-        sugenres: ['absurdist'],
-    },
-    {
-        title: 'The Bluest Eye',
-        author: 'Toni Morrison',
-        coverImage: 'images/book-covers/the-bluest-eye-cover.jpg',
-        coverImageDescription: 'The Bluest Eye book cover: Pecola sits by a window with a sorrowful expression',
-        style: 4,
-        story: 4,
-        soul: 4,
-        genre: 'fiction',
-        subgenres: ['bildungsroman', 'African American'],
-    },
-    {
-        title: 'The Glass Castle',
-        author: 'Jeannette Walls',
-        coverImage:'images/book-covers/the-glass-castle-cover.jpg',
-        coverImageDescription: 'The Glass Castle book cover: A young girl whispers',
-        style: 3.5,
-        story: 4,
-        soul: 3.5,
-        genre: 'nonfiction',
-        subgenres: ['memoir'],
-    },
-    {
-        title: 'No Country for Old Men',
-        author: 'Cormac McCarthy',
-        coverImage: 'images/book-covers/no-country-for-old-men-cover.jpg',
-        coverImageDescription: 'No Country for Old Men book cover: A vast field with a lone road sign',
-        style: 3.5,
-        story: 4.5,
-        soul: 3,
-        genre: 'fiction',
-        subgenres: ['thriller', 'western', 'crime', 'action'],
-    },
-    {
-        title: 'The Plague',
-        author: 'Albert Camus',
-        coverImage: 'images/book-covers/the-plague-cover.jpg',
-        coverImageDescription: 'The Plague book cover: A minimalist rendition of Dr. Bernard Rieux standing with blothces of pestilence',
-        style: 4,
-        story: 3.5,
-        soul: 4,
-        genre: 'fiction',
-        subgenres: ['absurdist'],
-    },
-    {
-        title: 'The Bean Trees',
-        author: 'Barbara Kingsolver',
-        coverImage: 'images/book-covers/the-bean-trees-cover.jpg',
-        coverImageDescription: 'The Bean Trees cover: A lone tree stands tall',
-        style: 3.5,
-        story: 3.5,
-        soul: 3.5,
-        genre: 'fiction',
-        subgenres: ['dratmatic fiction'],
-    },
-    {
-        title: 'The Trial',
-        author: 'Franz Kafka',
-        coverImage: 'images/book-covers/the-trial-cover.jpg',
-        coverImageDescription: '',
-        style: 4.5,
-        story: 4,
-        soul: 5,
-        genre: 'fiction',
-        subgenres: ['absurdist'],
-    },
-];
+import { books } from "./book-data.js";
 
 // Calculate overall rating for each book
 for (let book of books) {
@@ -281,3 +181,65 @@ const rightButton = document.getElementById("right-button");
 // Make buttons functional
 leftButton.onclick = () => updateBooks(-1);
 rightButton.onclick = () => updateBooks(+1);
+
+// Now add in book profile html
+function getProfileHTML(book) {
+    return `
+            <div class="container">
+            <div class="left">
+                <div class="general-info">
+                    <div class="basic-profile-info">
+                        <h1>The Stranger</h1>
+                        <h2>Albert Camus</h2>
+                    </div>
+                    <div class="overall star-row">
+                        <img src="images/stars/overall/full-star.svg">
+                        <img src="images/stars/overall/full-star.svg">
+                        <img src="images/stars/overall/full-star.svg">
+                        <img src="images/stars/overall/full-star.svg">
+                        <img src="images/stars/overall/full-star.svg">
+                    </div>
+                </div>
+                <div class="special-ratings">
+                    <div class="rating-container">
+                        <h3 class="rating-descriptor">Story:</h3>
+                        <div class="special star-row">
+                            <img src="images/stars/story/full-star.svg">
+                            <img src="images/stars/story/full-star.svg">
+                            <img src="images/stars/story/full-star.svg">
+                            <img src="images/stars/story/full-star.svg">
+                            <img src="images/stars/story/full-star.svg">
+                        </div>
+                    </div>
+                    <div class="rating-container">
+                        <h3 class="rating-descriptor">Style:</h3>
+                        <div class="special star-row">
+                            <img src="images/stars/style/full-star.svg">
+                            <img src="images/stars/style/full-star.svg">
+                            <img src="images/stars/style/full-star.svg">
+                            <img src="images/stars/style/full-star.svg">
+                            <img src="images/stars/style/full-star.svg">
+                        </div>
+                    </div>
+                    <div class="rating-container">
+                        <h3 class="rating-descriptor">Soul:</h3>
+                        <div class="special star-row">
+                            <img src="images/stars/soul/full-star.svg">
+                            <img src="images/stars/soul/full-star.svg">
+                            <img src="images/stars/soul/full-star.svg">
+                            <img src="images/stars/soul/full-star.svg">
+                            <img src="images/stars/soul/full-star.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    The Stranger is my favorite book of all time. It truly forces you to reconcile your own empathy with one who seems so alien.
+                </p>
+            </div>
+            <div class="right">
+                <img src="images/book-covers/the-stranger-cover.jpg" class="cover">
+            </div>
+        </div>
+    `;
+}
