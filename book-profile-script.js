@@ -59,4 +59,6 @@ displayRating(storyStars, book.story, 'story');
 displayRating(styleStars, book.style, 'style');
 displayRating(soulStars, book.soul, 'soul');
 
+lucide.createIcons();
+
 

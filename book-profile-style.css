@@ -44,6 +44,20 @@
     align-items: center;
 }
 
+.left {
+    position: relative;
+}
+
+button.back {
+    position:absolute;
+    bottom: 0;
+}
+
+button.back svg {
+    width: 60px;
+    height: auto;
+}
+
 img.cover {
     transform: translate(20px, 10px);
 }

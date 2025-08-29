@@ -107,7 +107,7 @@ for (let i = 0; i < starRows.length; i++) {
 }
 
 // Create icons for buttons
-lucide.createIcons()
+lucide.createIcons();
 
 // The next section is all about updates
 
