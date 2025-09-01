@@ -6,10 +6,9 @@ article {
     width: 30%;
     margin: 0 auto;
     background: transparent;
-    outline: 1px dashed lime;
 }
 
-button {
+.book-cover > button {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -23,7 +22,7 @@ button.right {
     left: -15%;
 }
 
-button svg {
+.book-cover > button svg {
     width: 8vw;
     height: auto;
 }
@@ -32,7 +31,6 @@ button svg {
     position: relative;
     aspect-ratio: 6.2 / 10;
     width: 100%;
-    outline: 1px dashed hotpink;
 }
 
 .book-cover img {
@@ -60,6 +58,7 @@ button svg {
     justify-content: space-between;
     align-items: center;
     gap: 10%;
+    outline: 1px solid white;
 }
 
 .basic-info {
@@ -85,4 +84,64 @@ button svg {
     flex: 1;
     max-width: 15%;
     height: auto;
+}
+
+.book-carousel-display-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.sort-options {
+    display: flex;
+    height: 100%;
+    gap: 8px;
+}
+
+.dropdown {
+    height: 100%;
+    position: relative;
+}
+
+.sort-options button {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+.sort-options button svg {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.dropdown li{
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown .dropdown-options {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 1px 1px 5px rgb(205, 205, 205);
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown:hover button {
+    background-color: rgb(50, 50, 50);
+}
+
+.dropdown li:hover {
+    background-color: rgb(50, 50, 50);
 }

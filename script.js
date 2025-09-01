@@ -183,64 +183,42 @@ const rightButton = document.getElementById("right-button");
 leftButton.onclick = () => updateBooks(-1);
 rightButton.onclick = () => updateBooks(+1);
 
-// Now add in book profile html
-function getProfileHTML(book) {
-    return `
-            <div class="container">
-            <div class="left">
-                <div class="general-info">
-                    <div class="basic-profile-info">
-                        <h1>${book.title}</h1>
-                        <h2>${book.author}</h2>
-                    </div>
-                    <div class="overall star-row">
-                        <img src="images/stars/overall/full-star.svg">
-                        <img src="images/stars/overall/full-star.svg">
-                        <img src="images/stars/overall/full-star.svg">
-                        <img src="images/stars/overall/full-star.svg">
-                        <img src="images/stars/overall/full-star.svg">
-                    </div>
-                </div>
-                <div class="special-ratings">
-                    <div class="rating-container">
-                        <h3 class="rating-descriptor">Story:</h3>
-                        <div class="special star-row">
-                            <img src="images/stars/story/full-star.svg">
-                            <img src="images/stars/story/full-star.svg">
-                            <img src="images/stars/story/full-star.svg">
-                            <img src="images/stars/story/full-star.svg">
-                            <img src="images/stars/story/full-star.svg">
-                        </div>
-                    </div>
-                    <div class="rating-container">
-                        <h3 class="rating-descriptor">Style:</h3>
-                        <div class="special star-row">
-                            <img src="images/stars/style/full-star.svg">
-                            <img src="images/stars/style/full-star.svg">
-                            <img src="images/stars/style/full-star.svg">
-                            <img src="images/stars/style/full-star.svg">
-                            <img src="images/stars/style/full-star.svg">
-                        </div>
-                    </div>
-                    <div class="rating-container">
-                        <h3 class="rating-descriptor">Soul:</h3>
-                        <div class="special star-row">
-                            <img src="images/stars/soul/full-star.svg">
-                            <img src="images/stars/soul/full-star.svg">
-                            <img src="images/stars/soul/full-star.svg">
-                            <img src="images/stars/soul/full-star.svg">
-                            <img src="images/stars/soul/full-star.svg">
-                        </div>
-                    </div>
-                </div>
+// Make filter and order selectors functional
+const selectorList = document.querySelectorAll('.dropdown-options > li');
+selectorList.forEach(selector => {
+    selector.addEventListener('click', () => {
+        console.log(`We got a click gang on ${selector.id}`);
+        console.log(books);
+        switch (selector.id) {
+            case 'overall-order-selector':
+                books.sort((a, b) => b.rating - a. rating);
+                break;
+            case 'story-order-selector':
+                books.sort((a, b) => b.story - a.story);
+                break;
+            case 'style-order-selector':
+                books.sort((a, b) => b.style - a.style);
+                break;
+            case 'soul-order-selector':
+                books.sort((a, b) => b.soul - a.soul);
+                break;
+            case 'title-order-selector':
+                books.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+                break;
+            case 'author-order-selector':
+                books.sort((a, b) => a.author.toLowerCase().localeCompare(b.author.toLowerCase()));
+                break;
+            case 'genre-filter-selector':
+                break;
+            case 'rating-filter-selector':
+                break;
+            default:
+                break;
+        }
+        
+        console.log(books);
+        updateBooks(0);
+    })
+});
 
-                <p>
-                    The Stranger is my favorite book of all time. It truly forces you to reconcile your own empathy with one who seems so alien.
-                </p>
-            </div>
-            <div class="right">
-                <img src="images/book-covers/the-stranger-cover.jpg" class="cover">
-            </div>
-        </div>
-    `;
-}
+

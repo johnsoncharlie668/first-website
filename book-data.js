@@ -113,3 +113,6 @@ export const books = [
 for (let book of books) {
     book.rating = Math.round(((book.style + book.story + book.soul) / 3) * 2) / 2;
 }
+
+// Default sorting should be by rating
+books.sort((a, b) => b.rating - a.rating);
