@@ -1,14 +1,15 @@
 import { books } from "./book-data.js";
+let workingBooks = [...books]
 
 // Get stating info needed for book carousel
 let previousBookIndex = 0;
 let currentBookIndex = 1;
 let nextBookIndex = 2;
 
-let previousBook = books[previousBookIndex];
-let currentBook = books[currentBookIndex];
-let nextBook = books[nextBookIndex];
-const numBooks = books.length;
+let previousBook = workingBooks[previousBookIndex];
+let currentBook = workingBooks[currentBookIndex];
+let nextBook = workingBooks[nextBookIndex];
+const numBooks = workingBooks.length;
 
 // Use a function to display stars in accordance with rating
 function displayStar(starElement, imageAddress) {
@@ -103,7 +104,7 @@ const starRows = document.querySelectorAll('.star-row');
 const stars = [];
 for (let i = 0; i < starRows.length; i++) {
     stars.push(starRows[i].children);
-    displayRating(stars[i], books[i].rating);
+    displayRating(stars[i], workingBooks[i].rating);
 }
 
 // Create icons for buttons
@@ -117,15 +118,15 @@ function updateBookIndex(change) {
     currentBookIndex = (currentBookIndex + change + numBooks) % numBooks;
     nextBookIndex = (nextBookIndex + change + numBooks) % numBooks;
 
-    previousBook = books[previousBookIndex];
-    currentBook = books[currentBookIndex];
-    nextBook = books[nextBookIndex];
+    previousBook = workingBooks[previousBookIndex];
+    currentBook = workingBooks[currentBookIndex];
+    nextBook = workingBooks[nextBookIndex];
 }
 
 function updateStars() {
     for (let i = 0; i < starRows.length; i++) {
         // For each row of stars simply change the src of the imgae
-        displayRating(stars[i], books[(i + previousBookIndex + numBooks) % numBooks].rating);
+        displayRating(stars[i], workingBooks[(i + previousBookIndex + numBooks) % numBooks].rating);
     }
 }
 
@@ -185,28 +186,36 @@ rightButton.onclick = () => updateBooks(+1);
 
 // Make filter and order selectors functional
 const selectorList = document.querySelectorAll('.dropdown-options > li');
+
 selectorList.forEach(selector => {
     selector.addEventListener('click', () => {
         console.log(`We got a click gang on ${selector.id}`);
-        console.log(books);
+        console.log(workingBooks);
+        // Add active-sort class to chosen and remove from others
+        selectorList.forEach(selector => {
+            if (selector.classList.contains('active-sort')) {
+                selector.classList.remove('active-sort');
+            }
+        });
+        selector.classList.add('active-sort');
         switch (selector.id) {
             case 'overall-order-selector':
-                books.sort((a, b) => b.rating - a. rating);
+                workingBooks.sort((a, b) => b.rating - a. rating);
                 break;
             case 'story-order-selector':
-                books.sort((a, b) => b.story - a.story);
+                workingBooks.sort((a, b) => b.story - a.story);
                 break;
             case 'style-order-selector':
-                books.sort((a, b) => b.style - a.style);
+                workingBooks.sort((a, b) => b.style - a.style);
                 break;
             case 'soul-order-selector':
-                books.sort((a, b) => b.soul - a.soul);
+                workingBooks.sort((a, b) => b.soul - a.soul);
                 break;
             case 'title-order-selector':
-                books.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+                workingBooks.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
                 break;
             case 'author-order-selector':
-                books.sort((a, b) => a.author.toLowerCase().localeCompare(b.author.toLowerCase()));
+                workingBooks.sort((a, b) => a.author.toLowerCase().localeCompare(b.author.toLowerCase()));
                 break;
             case 'genre-filter-selector':
                 break;
@@ -216,7 +225,7 @@ selectorList.forEach(selector => {
                 break;
         }
         
-        console.log(books);
+        console.log(workingBooks);
         updateBooks(0);
     })
 });
