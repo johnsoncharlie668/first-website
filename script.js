@@ -1,5 +1,12 @@
 import { books } from "./book-data.js";
 let workingBooks = [...books]
+normalizeBooks(workingBooks);
+
+function normalizeBooks(booksArray) {
+    // Remove last book from the array and add it to the front with unshift
+    const lastBook = booksArray.pop();
+    booksArray.unshift(lastBook);
+}
 
 // Get stating info needed for book carousel
 let previousBookIndex = 0;
@@ -224,6 +231,7 @@ selectorList.forEach(selector => {
             default:
                 break;
         }
+        normalizeBooks(workingBooks);
         
         console.log(workingBooks);
         updateBooks(0);
