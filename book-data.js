@@ -107,6 +107,18 @@ export const books = [
         genre: 'fiction',
         subgenres: ['absurdist'],
     },
+    {
+        title: 'Against Nature',
+        author: 'Joris-Karl Huysmans',
+        coverImage: 'images/book-covers/against-nature-cover.jpg',
+        coverImageDescription: 'The Against Nature cover: Des Esseintes lounges languidly with a cigarette and book in hand',
+        link: 'book-profile.html?title=against-nature',
+        style: 5,
+        story: 3.5,
+        soul: 4.5,
+        genre: 'fiction',
+        subgenres: ['decadent'],
+    },
 ];
 
 // Calculate overall rating for each book

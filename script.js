@@ -8,7 +8,7 @@ function normalizeBooks(booksArray) {
     booksArray.unshift(lastBook);
 }
 
-// Get stating info needed for book carousel
+// Get starting info needed for book carousel
 let previousBookIndex = 0;
 let currentBookIndex = 1;
 let nextBookIndex = 2;
@@ -23,16 +23,34 @@ function displayStar(starElement, imageAddress) {
     starElement.src = imageAddress;
 }
 
-function displayRating(starsInRow, rating) {
+function displayRating(starsInRow, book, starType) {
+    let rating;
+    switch(starType){
+        case 'overall':
+            rating = book.rating;
+            break;
+        case 'story':
+            rating = book.story;
+            break;
+        case 'style':
+            rating = book.style;
+            break;
+        case 'soul':
+            rating = book.soul;
+            break;
+        default:
+            break;
+    }
+
     let remainingStars = rating;
     for (let i = 0; i < 5; i++) {
         if (remainingStars >= 1) {
-            displayStar(starsInRow[i], 'images/stars/overall/full-star.svg');
+            displayStar(starsInRow[i], 'images/stars/' + starType + '/full-star.svg');
         }
         else if (remainingStars === 0.5) {
-            displayStar(starsInRow[i], 'images/stars/overall/half-star.svg');
+            displayStar(starsInRow[i], 'images/stars/' + starType + '/half-star.svg');
         }
-        else {displayStar(starsInRow[i], 'images/stars/overall/empty-star.svg');}
+        else {displayStar(starsInRow[i], 'images/stars/' + starType + '/empty-star.svg');}
 
         remainingStars -= 1;
     }
@@ -109,9 +127,12 @@ bookCarousel.append(nextBookArticle);
 // Set stars
 const starRows = document.querySelectorAll('.star-row');
 const stars = [];
+
+// starsToDisplay will be what kind of rating we display depending on order selected
+let starsToDisplay = 'overall';
 for (let i = 0; i < starRows.length; i++) {
     stars.push(starRows[i].children);
-    displayRating(stars[i], workingBooks[i].rating);
+    displayRating(stars[i], workingBooks[i], starsToDisplay);
 }
 
 // Create icons for buttons
@@ -133,7 +154,7 @@ function updateBookIndex(change) {
 function updateStars() {
     for (let i = 0; i < starRows.length; i++) {
         // For each row of stars simply change the src of the imgae
-        displayRating(stars[i], workingBooks[(i + previousBookIndex + numBooks) % numBooks].rating);
+        displayRating(stars[i], workingBooks[(i + previousBookIndex + numBooks) % numBooks], starsToDisplay);
     }
 }
 
@@ -199,30 +220,48 @@ selectorList.forEach(selector => {
         console.log(`We got a click gang on ${selector.id}`);
         console.log(workingBooks);
         // Add active-sort class to chosen and remove from others
+        // Have to be careful of which kind of selector it is
+        let classToCheck = '';
+        if (selector.classList.contains('order-selector')) {
+            classToCheck = 'order-selector';
+        }
+        else if (selector.classList.contains('filter-selector')) {
+            classToCheck = 'filter-selector';
+        }
         selectorList.forEach(selector => {
-            if (selector.classList.contains('active-sort')) {
-                selector.classList.remove('active-sort');
+            if (selector.classList.contains(classToCheck)) {
+                if (selector.classList.contains('active-sort')) {
+                    selector.classList.remove('active-sort');
+                }
             }
         });
         selector.classList.add('active-sort');
         switch (selector.id) {
             case 'overall-order-selector':
                 workingBooks.sort((a, b) => b.rating - a. rating);
+                // If we choose overall want overall stars to display
+                starsToDisplay = 'overall';
                 break;
             case 'story-order-selector':
                 workingBooks.sort((a, b) => b.story - a.story);
+                // If we choose story want story stars to display
+                starsToDisplay = 'story';
                 break;
             case 'style-order-selector':
                 workingBooks.sort((a, b) => b.style - a.style);
+                starsToDisplay = 'style';
                 break;
             case 'soul-order-selector':
                 workingBooks.sort((a, b) => b.soul - a.soul);
+                starsToDisplay = 'soul';
                 break;
             case 'title-order-selector':
                 workingBooks.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+                starsToDisplay = 'overall';
                 break;
             case 'author-order-selector':
                 workingBooks.sort((a, b) => a.author.toLowerCase().localeCompare(b.author.toLowerCase()));
+                starsToDisplay = 'overall';
                 break;
             case 'genre-filter-selector':
                 break;
@@ -231,7 +270,10 @@ selectorList.forEach(selector => {
             default:
                 break;
         }
-        normalizeBooks(workingBooks);
+        // Only normalize array if changing its sort and not just changing the number of items
+        if (selector.classList.contains('order-selector')) {
+            normalizeBooks(workingBooks);
+        }
         
         console.log(workingBooks);
         updateBooks(0);
