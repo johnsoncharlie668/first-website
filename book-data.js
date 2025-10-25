@@ -93,7 +93,7 @@ export const books = [
         story: 3.5,
         soul: 3.5,
         genre: 'fiction',
-        subgenres: ['dratmatic fiction'],
+        subgenres: ['dramatic fiction'],
     },
     {
         title: 'The Trial',
@@ -118,6 +118,18 @@ export const books = [
         soul: 4.5,
         genre: 'fiction',
         subgenres: ['decadent'],
+    },
+    {
+        title: 'The Vegetarian',
+        author: 'Han Kang',
+        coverImage: 'images/book-covers/the-vegetarian-cover.jpg',
+        coverImageDescription: 'The Vegetarian cover: Yeong-hye looks upwards serenely, with her part-plant body sprouting flowers',
+        link: 'book-profile.html?title=the-vegetarian',
+        style: 5,
+        story: 4,
+        soul: 4.5,
+        genre: 'fiction',
+        subgenres: ['psychological']
     },
 ];
 
